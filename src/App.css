@@ -1,38 +1,186 @@
-.App {
-  text-align: center;
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.inp {
+  padding: 10px;
+  border: 1px solid black;
+  font-size: 20px;
+  outline: none;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button[type=submit] {
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid black;
+  background: black;
+  color: white;
+  cursor: pointer;
+  transition: .25s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button[type=submit]:hover {
+  opacity: 0.7;
+}
+
+.add-todo {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+  width: 100%;
+  max-width: 50%;
+}
+
+.todos {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 100%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  max-width: 50%;
+}
+
+.todo {
+  padding: 10px;
+  border: 1px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todo-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.check {
+  height: 20px;
+  width: 20px;
+  accent-color: black;
+  border-radius: 0;
+  border: 1px solid black;
+}
+
+.dashed {
+  text-decoration: line-through;
+}
+
+.todo-text {
+  font-size: 17px;
+}
+
+.todo-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.todo-actions button {
+  padding: 5px 7px;
+  border-radius: 0;
+  border: 1px solid black;
+  background: black;
   color: white;
+  cursor: pointer;
+  transition: .25s;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-actions button:hover {
+  opacity: 0.7;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.edit-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.modal-body h1 {
+  margin-bottom: 10px;
+}
+
+.modal-body {
+  background: white;
+  padding: 20px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  padding-top: 30px;
+}
+
+.close-modal {
+  border: 1px solid black;
+  padding: 5px 10px;
+  background: transparent;
+  border-radius: 0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.edit-form {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 390px) {
+  .modal-body h1 {
+    font-size: 18px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .todo-actions button {
+    font-size: 10px;
+  }
+
+  .hero-title {
+    font-size: 18px;
+  }
+
+  button[type=submit] {
+    font-size: 10px;
+  }
+
+  .inp {
+    font-size: 10px;
+  }
+
+  .todos {
+    max-width: 70%;
+  }
+
+  .todo-text {
+    font-size: 10px;
+  }
+
+  .add-todo {
+    max-width: 70%;
+    width: 100%;
+  }
+
+  .info {
+    font-size: 18px;
   }
 }
